@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./test.css">
+</head>
+<body >
+    <nav   id = " navbar-example "   class = " navbar navbar-default navbar-static "   role = " navigation " > 
+    <div   class = " container-fluid " >  
+    <div   class = " navbar-header " > 
+        <button   class = " navbar-toggle "   type = " button "   data-toggle = " collapse " 
+                data-target = " .bs-js-navbar-scrollspy " > 
+            <span   class = " sr-only " > 切換導航 </span > 
+            <span   class = " icon-bar " > </span > 
+            <span   class = " icon-bar " > </span > 
+            <span   class = " icon-bar " > </span > 
+        </button > 
+        <a   class = " navbar-brand "   href = " # " > 教程名稱 </a > 
+    </div > 
+    <div   class = " collapse navbar-collapse bs-js-navbar-scrollspy " > 
+        <ul   class = " nav navbar-nav " > 
+            <li > <a   href = " #ios " > iOS </a > </li > 
+            <li > <a   href = " #svn " > SVN </a > </li > 
+            <li   class = " dropdown " > 
+                <a   href = " # "   id = " navbarDrop1 "   class = " dropdown-toggle " 
+                   data-toggle = " dropdown " > Java <b   class = " caret " > </b > 
+                </a > 
+                <ul   class = " dropdown-menu "   role = " menu " 
+                    aria-labelledby = " navbarDrop1 " > 
+                    <li > <a   href = " #jmeter "   tabindex = " -1 " > jmeter </a > </li > 
+                    <li > <a   href = " #ejb "   tabindex = " -1 " > ejb </a > </li > 
+                    <li   class = " divider " > </li > 
+                    <li > <a   href = " #spring "   tabindex = " -1 " > spring </a > </li > 
+                </ul > 
+            </li > 
+        </ul > 
+    </div > 
+    </div >  
+</nav > 
+<div   data-spy = " scroll "   data-target = " #navbar-example "   data-offset = " 0 " 
+     style = " height:200px;overflow:auto; position: relative; " > 
+    <h4   id = " ios " > iOS </h4 > 
+    <p > iOS是一個由蘋果公司開發和發布的手機操作系統。 最初是於2007年首次發布iPhone、iPod Touch和Apple TV。 iOS派生自OS X，它們共享Darwin基礎。 OS X操作系統是用在蘋果電腦上，iOS是蘋果的移動版本。 </p > 
+    <h4   id = " svn " > SVN </h4 > 
+    <p > Apache Subversion，通常縮寫為SVN，是一款開源的版本控制系統軟件。 Subversion由CollabNet公司在2000年創建。 但是現在它已經發展為Apache Software Foundation的一個項目，因此擁有豐富的開發人員和用戶社區。 </p > 
+    <h4   id = " jmeter " > jMeter </h4 > 
+    <p > jMeter是一款開源的測試軟件。 它是100%純Java應用程序，用於負載和性能測試。 </p > 
+    <h4   id = " ejb " > EJB </h4 > 
+    <p > Enterprise Java Beans（EJB）是一個創建高度可擴展性和強大企業級應用程序的開發架構，部署在兼容應用程序服務器（比如JBOSS、Web Logic等）的J2EE上。 </p > 
+    <h4   id = " spring " > Spring </h4 > 
+    <p > Spring框架是一個開源的Java平台，為快速開發功能強大的Java應用程序提供了完備的基礎設施支持。 </p > 
+    <p > Spring框架最初是由Rod Johnson編寫的，在2003年6月首次發佈於Apache 2.0許可證下。 </p > 
+</div > 
+</body>
+</html>

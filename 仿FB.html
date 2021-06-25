@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap" rel="stylesheet">    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <title>仿Facebook</title>
+    <style>
+        /* RWD */
+        /* #region */
+        @media (min-width:920px) {
+            article{
+                width:70vw;
+            }
+            .no2>.publish>.publishother>div{
+                width: 11vw;
+            }
+            .righthead{
+                display: flex;
+                justify-content: space-around;
+            }
+            .righthead>.rightpic{
+                width: 12%;
+            }
+        }
+        @media (max-width:1200px) {
+            .no1{
+                display: none;
+            }
+            article{
+                width:100%
+            }
+        }
+        @media (max-width:920px) {
+            article{
+                width:100%
+            }
+            .no1{
+                display: none;
+            }
+            .no3out{
+                display: none;
+            }
+            .no2>.publish{
+                width: 100%;
+            }
+            header>.interhead{
+                display: none;
+            }
+            header>.righthead>.user{
+                display: none;
+            }
+            .lefthead>.input1{
+                width: 150px;
+            }
+            .righthead{
+                display: flex;
+                justify-content:inherit;
+            }
+            .righthead>.rightpic{
+                width: 15%;
+            }
+        }
+        @media (max-width:500px){
+            .no2>.moving>.movinghide{
+                display: none;
+            }
+        }
+        /* #endregion */
+        body{
+            margin: 0;
+            font-family: 'Noto Serif TC', serif;            
+            list-style-type: none;
+            background-color: #F0F2F5;
+            }
+        
+        /* 頭*/
+        /* #region */
+        header{
+            display:flex;
+            flex-direction: row;
+            justify-content:space-between;
+            width: 100%;height: 45px;
+            background-color: white;
+            color:gray;
+            line-height: 50px;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.329);
+            position: fixed;
+        }
+        /* 左邊的頭 */
+        .lefthead{
+            display: flex;
+            align-items:center;
+            position: relative;
+        }
+
+        #icon{
+            font-size:35px;
+            color: blue;
+            margin-left: 1vw;
+            margin-right: 5px;
+            line-height: 50px;
+        }
+        .input1{
+            border-radius:20px;
+            text-align: left;
+            border: #F0F2F5 solid 0.1px;
+            background-color: #F0F2F5;
+            height: 30px;
+            font-size: 10px;
+            width: 200px;
+            ;
+        }
+        /* 中間的頭 */
+        .interhead {
+            width: 600px;
+            height: 45px;
+            text-align: center;
+            display: flex;
+            justify-content:space-around;
+        }
+        .interhead>div:hover{
+            background-color: #F0F2F5;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .interhead>div{
+            width:100%;
+        }
+
+        /* 右邊的頭 */
+        .righthead{
+            width: 250px;
+            height: 45px;
+            text-align: center;
+            align-items: center;
+            margin-right: 1.5vw;
+        }
+        .righthead>div{
+            margin-right: 0.5vw
+        }
+
+        .righthead>.user{
+            width: 120px;
+            height: 70%;
+            display: flex;
+            border-radius:20px;
+            font-size: 8px;
+            justify-content:center;
+            align-items: center;
+            padding-left: 15px;
+            color: #1C1E21;
+            }
+        .righthead>.user>img{
+            width: 20px;
+            height: 20px;
+           margin-right: 10px;
+           border-radius: 50%;
+           box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+
+        }
+
+        .righthead>.user:hover{
+            background-color:#F0F2F5 ;
+            cursor: pointer;
+        }
+        .righthead>.rightpic{
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            height:60%;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            color: #1C1E21;
+        }
+        .righthead>.rightpic:hover{
+            background-color: #d7d9df;
+            cursor: pointer;
+        }
+        /* #endregion */
+
+        /*中間*/
+        article{
+            display:flex;
+            justify-content:space-between;
+            height: 100vh;
+            margin: auto;
+            background-color: #F0F2F5;
+        }
+
+        /* 中間左邊 */
+        /* #region */
+        .no1{
+            flex:none;
+            width:250px;
+            background-color: #F0F2F5;
+        }
+        /* 王小明 */
+        .no1>.list{
+            margin:20px 10px 20px 10px;
+            display: flex;
+            flex-direction: column;
+;
+        }
+        .no1>.list>div{
+            font-size: 10px;
+            margin:4px 0 4px 0;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+        .no1>.list>div:hover{
+            cursor: pointer;
+            background-color: #e2e4e5;
+        }
+        
+        .no1>.list>div>img{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+            margin-right: 6px;
+        }
+        .no1>.list>div>div>#more{
+            width: 25px;
+            height: 25px;
+            background-color: #d8d9db;
+            align-self: center;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* 捷徑 */
+        .no1>.fastgo{
+            margin:20px 10px 20px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .no1>.fastgo>div{
+            font-size: 8px;
+            margin:4px 0 4px 0;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            border-radius: 10px;
+        }
+        .no1>.fastgo>#fastgo:hover{
+            cursor: pointer;
+            background-color: #e2e4e5;
+        }
+        .no1>.fastgo>#fastgo>img{
+            width: 25px;
+            height: 25px;
+            border-radius: 30%;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+            margin-right: 6px;
+        }
+        /* #endregion */
+        
+        /* 主內容(動態) */
+        /* #region */
+        .no2out{
+            flex:auto;
+            height: 100vh;
+            overflow:scroll;
+        }
+        .no2out::-webkit-scrollbar {
+            display: none
+        }        
+        .no2{
+            height: 200vh;
+            background-color: #F0F2F5;
+            color: brown;
+            }
+        .no2>.moving{
+            height: 180px;
+            margin: 3px;
+            display: flex;
+            justify-content:center
+        }
+        .no2>.moving>div{
+            width: 90px;
+            height: 150px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.329);
+        }
+        .no2>.moving>div:hover{
+            cursor: pointer;
+        }
+
+        .moving>div>img{
+            width: 30px;
+            height: 30px;
+            margin: 8px;
+            border-radius: 50%;
+            border: solid blue 2px;
+        }
+        .no2>.publish{
+            height: 150px;
+            margin: 3px;
+            display: flex;
+            margin: 1vw 1vw 2vw 1vw;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.329);
+            flex-direction:column;
+            }
+
+        .no2>.publish>.publishhow{
+            display: flex;
+        }
+        .no2>.publish>.publishhow>img{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 10px 0 10px 10px;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+
+        }
+        .no2>.publish>.publishhow>input{
+            border-radius:20px;
+            text-align: left;
+            border: #F0F2F5 solid 0.1px;
+            background-color: #F0F2F5;
+            height: 30px;
+            font-size: 10px;
+            width: 55vw;
+            padding: 3px;
+            margin: 10px;
+
+        }
+        .no2>.publish>.publishother{
+            display: flex;
+            align-items:center;
+            height: 100%;
+            width: 100%;
+            justify-content:space-around;
+        }
+        .no2>.publish>.publishother>div{
+            height: 50px;
+            text-align:center;
+            padding: 5px;
+            border-radius: 10px;
+            line-height: 40px;
+            color: gray;
+            font-size: 15px;
+        }
+        .no2>.publish>.publishother>div:hover{
+            background-color: #F0F2F5;
+            cursor: pointer;
+        }
+        
+        .no2>.publish>hr{
+            size: 12px;
+            color:#919192;
+            margin: 5px 20px 5px 20px;
+
+        }
+        /* #endregion */
+        
+        /* 右邊朋友壽星 */
+        /* #region */
+        .no3out{
+            flex:none;
+            width:250px;
+            overflow:scroll;
+        }
+        .no3out::-webkit-scrollbar {
+            display: none
+        }        
+        .no3{
+            flex:none;
+            margin-left: 25px;
+            height: 150vh;
+        }
+        .no3>.birthday{
+            margin:20px 10px 20px 10px;
+            display: flex;
+            flex-direction: column;
+            font-size: 10px;
+        }
+        .no3>.birthday>#birthday{
+            height: 30px;
+            border-radius: 10px;
+            line-height: 30px;
+        }
+        .no3>.birthday>#birthday:hover{
+            cursor: pointer;
+            background-color: #e2e4e5;
+        }
+
+        .no3>.users{
+            margin:20px 10px 20px 10px;
+            display: flex;
+            flex-direction: column;
+            font-size: 10px;
+        }
+        .no3>.users>#users{
+            margin:10px 10px 10px 10px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius:10px ;
+        }
+        .no3>.users>#users:hover{
+            background-color: #e2e4e5;
+            cursor: pointer;
+        }
+        
+        .no3>.users>#users>img{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-right: 10px ;
+            box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+        }
+
+        .no3>.users>#users>div>#no3more{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #d8d9db;            
+            margin-right: 8px;
+            margin-left: 1px;
+        }
+        /* #endregion */
+        
+        
+        /* messenger */
+        /* #region */
+        .messenger{
+            display: none;
+            position: absolute; 
+            bottom: 0;
+            width: 250px; 
+            height: 300px;
+            background-color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            right: 100px;
+            box-shadow: 5px 5px 20px  rgba(128, 128, 128, 0.329),-5px -5px 20px  rgba(184, 183, 183, 0.329);
+        }
+        /* 上面 */
+        .messenger>.mess1{
+            margin: 2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1),0 -1px rgba(0, 0, 0, 0.1) inset ,0 2px 1px -1px rgba(255, 255, 255, 0.5) inset;
+            display: flex;
+            justify-content:space-between
+        }
+        .messenger>.mess1>div>img{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            line-height: 20px;
+            margin: 5px;
+        }
+
+        .messenger>.mess1>div>div{
+            margin: 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            color: rgb(85, 85, 253);
+        }
+        .messenger>.mess1>div>div:hover{
+            background-color: rgba(219, 218, 218, 0.582);
+            cursor: pointer;
+        }
+
+        .messenger>.mess2{
+             height: 70%;
+             width: 98%;
+             margin: auto;
+             overflow-y:scroll;
+        }
+        .messenger>.mess2>div{
+            height: 150%;
+        }
+        .messenger>.mess3{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        .messenger>.mess3>#mess3{
+            color: rgb(85, 85, 253);
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            
+        }
+        .messenger>.mess3>#mess3:hover{
+            cursor: pointer;
+            background-color: rgba(224, 223, 223, 0.555);
+        }
+        .messenger>.mess3>div>input{
+            width: 80px;
+            border-radius:20px;
+            border: #F0F2F5 solid 0.1px;
+            background-color: #F0F2F5;
+            font-size: 10px;
+        }
+        /* #endregion */
+
+
+
+        </style>
+
+</head>
+<body>
+    <header>
+        <div class="lefthead">
+            <i class="fab fa-facebook" id='icon'></i>
+            <input class='input1' type="text" placeholder=　　搜尋Facebook...>
+        </div>
+
+        <div class="interhead">
+            <div><i class="fas fa-home"></i></div>
+            <div><i class="fas fa-play-circle"></i></div>
+            <div><i class="fas fa-store"></i></div>
+            <div><i class="fas fa-users"></i></div>
+            <div><i class="fas fa-gamepad"></i></div>
+        </div>
+
+
+        <div class='righthead'>
+            <div class='user'><img src="./media/1-1.jpeg" alt=""><b>王小明</b>&nbsp;&nbsp;&nbsp;</div>
+            <div class='rightpic'><i class="fas fa-plus"></i></div>
+            <div class='rightpic'><i class="fab fa-facebook-messenger"></i></div>
+            <div class='rightpic'><i class="fas fa-bell"></i></div>
+            <div class='rightpic'><i class="fas fa-sort-down"></i></div>
+        </div>
+    </header>
+
+
+    <article>
+    <div class="no1">
+        <br><br>
+        <div class="list">
+            <div><img src="./media/1-1.jpeg" alt=""> 王小明</div>
+            <div><img src="./media/virus.png" alt=""> 新冠病毒資訊中心</div>
+            <div><img src="./media/朋友.png" alt=""> 朋友</div>
+            <div><img src="./media/社團.png" alt=""> 社團</div>
+            <div><img src="./media/商店.png" alt=""> Marketplace</div>
+            <div><img src="./media/影片.png" alt=""> Watch</div>
+            <div>
+                <div style="display: flex">            
+                    <div id='more'><i class="fas fa-chevron-down" style="width: 100%;justify-content:center;display: flex;line-height: 30px;"></i> </div>
+                   顯示更多
+                </div> 
+            </div>
+        </div>
+        <hr style="margin: 0px 30px 0px 20px;">
+        <div class='fastgo'>
+            <div style="font-size: 13px;color:grey ;">你的捷徑</div>
+            <div id='fastgo'><img src="./media/1.jpeg" alt=""> English Speaking Society</div>
+            <div id='fastgo'><img src="./media/2.jpeg" alt=""> Flower Arts Club</div>
+            <div id='fastgo'><img src="./media/3.jpeg" alt=""> Taichi Club</div>
+            <div id='fastgo'> <img src="./media/4.jpeg" alt=""> Orchestra</div>
+            <div id='fastgo' ><img src="./media/5.jpeg" alt=""> Tea Ceremony Club</div>
+        </div>
+    </div>
+    <div class='no2out'>
+        <div class="no2">
+            <br><br>
+            <!-- 限時 -->
+            <div class='moving'>
+                    <div style="background-image: url(./media/1.jpeg);background-size: cover;"><img src="./media/1-1.jpeg" alt="" ></div>
+                    <div style="background-image: url(./media/2.jpeg);background-size: cover;"><img src="./media/2-1.jpeg" alt="" ></div>
+                    <div style="background-image: url(./media/3.jpeg);background-size: cover;"><img src="./media/3-1.jpeg" alt="" ></div>
+                    <div style="background-image: url(./media/4.jpeg);background-size: cover;"><img src="./media/4-1.jpeg" alt="" ></div>
+                    <div class='movinghide' style="background-image: url(./media/5.jpeg);background-size: cover;"><img src="./media/5-1.jpeg" alt="" ></div>
+                    <div class='movinghide' style="background-image: url(./media/6.jpeg);background-size: cover;"><img src="./media/6-1.jpeg" alt="" ></div>
+            </div>
+            <!-- 發布消息 -->
+            <div class="publish">
+                <div class="publishhow">
+                <img src="./media/1-1.jpeg" alt="">
+                <input type="text" placeholder= '  王小明，在想些什麼？'>
+                </div>
+                <hr>
+                <div class="publishother">
+                    <div><i class="fas fa-video " style="font-size: 18px;color: palevioletred;"></i>&nbsp;直播視訊</div>
+                    <div><i class="far fa-images"  style="font-size: 18px;color: rgb(141, 212, 34);"></i>&nbsp;相片/影片</div>
+                    <div><i class="far fa-laugh-beam" style="font-size: 18px;color: rgb(255, 196, 0);"></i>&nbsp;感受/活動</div>
+                </div>
+            </div>
+            <!-- 貼文 -->
+            <div class='Paste'>
+
+            </div>
+        </div>
+    </div>
+    <div class="no3out">
+    <div class="no3">
+        <br><br>
+        <div class="birthday">
+            <div style="font-size: 14px;margin-bottom: 5px;color: rgb(112, 112, 112);">壽星</div>
+            <div id='birthday'><i class="fas fa-gift" style="color: red;font-size: 20px;margin-left: 5px;"></i>&nbsp;OOO和OOO都是今天生日</div>
+        </div>
+        <hr style="margin: 0px 30px 0px 20px;">
+        <div class="users">
+            <div style="font-size: 14px;color: rgb(112, 112, 112)">用戶</div>
+            <div id='users'><img src="./media/1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/2.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/3.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/4.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/5.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/6.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/1-1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/2-1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/3-1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/4-1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/5-1.jpeg" alt=""> OOO</div>
+            <div id='users'><img src="./media/6-1.jpeg" alt=""> OOO</div>
+            <div id='users'>
+                <div style="display: flex;align-items: center;">            
+                    <div id='no3more'><i class="fas fa-chevron-down" style="width: 100%;justify-content:center;display: flex;line-height: 30px;"></i> </div>
+                   建立新群組
+                </div> 
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class='messenger'>
+        <div class="mess1">
+            <div style="display: flex;align-items: center;"><img src="./media/1.jpeg" alt="">&nbsp;OOO</div> 
+            <div style="margin: 5px;display: flex;">
+                <div><i class="fas fa-video"></i></div>
+                <div><i class="fas fa-phone"></i></div>
+                <div><i class="fas fa-grip-lines"></i></div>
+                <div><i class="fas fa-times"></i></div>
+            </div>
+        </div>
+        <div class="mess2" >
+            <div></div>
+        </div>
+        <div class="mess3">
+            <div id='mess3'><i class="fas fa-plus"></i></div>
+            <div id='mess3'><i class="far fa-image"></i></i></div>
+            <div id='mess3'><i class="fas fa-caret-square-right"></i></div>
+            <div id='mess3'><i class="fas fa-camera-retro"></i></i></div>
+            <div><input type="text"></div>
+            <div id='mess3'><i class="fas fa-laugh-squint"></i></div>
+            <div id='mess3'><i class="fas fa-thumbs-up"></i></div>
+    </div>
+    </div>
+    </article>
+    
+</body>
+</html>

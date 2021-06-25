@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            width: 400px;
+            height: 250px;
+        }
+        #outer{
+            width: 420px;
+            height: 250px;
+            margin: auto;
+            position: relative;
+            top:50px;
+            background-color: pink;
+            padding: 20px 0;
+            overflow: hidden;
+        }
+        #imgList{
+            width: 2100px;
+            left: 0px;
+            position: absolute;
+
+        }
+        #imgList>li{
+            float: left;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <img src="c1.jpg" alt="" id='img'>
+    <br><br><br>
+    <button id="btn" >按你才動!</button>
+    <button id="btn02">停!</button> -->
+
+    <div id="outer">
+        <ul id="imgList">
+            <li>
+                <img src="c1.jpg" alt="">
+            </li>
+            <li>
+                <img src="c2.jpg" alt="">
+            </li>
+            <li>
+                <img src="c3.jpg" alt="">
+            </li>
+            <li>
+                <img src="c4.jpg" alt="">
+            </li>
+            <li>
+                <img src="c5.jpg" alt="">
+            </li>
+
+        </ul>
+    </div>
+    <br><br><br><br>
+    <button btn='btn01'>前進</button>
+    <button btn='btn02'>後退</button>
+
+
+    <script>
+        
+            let imgList=document.getElementById('imgList')
+            let index=0
+            // console.log(parseInt( getComputedStyle(imgList,null).left))
+
+            // setInterval(()=>{
+            //     let oldLeft=parseInt( getComputedStyle(imgList,null).left)
+            //     index++;
+            //     if(index>=5){
+            //         imgList.style.left=`0px`;
+            //         index=0
+            //     }
+            //     else{
+            //         imgList.style.left=`${oldLeft-420}px`;
+            //     }
+
+            // },1000)
+
+         
+
+
+
+
+        // let timer;
+        // let btn=document.getElementById('btn')
+        // let img =document.getElementById('img')
+        // let index=0
+        // let imgArr=["c1.jpg","c2.jpg","c3.jpg","c4.jpg","c5.jpg"]
+
+        // btn.onclick=()=>{
+        //     clearInterval(timer)
+        //     timer=
+        //     setInterval(()=>{
+        //         index++;
+        //         if(index>=imgArr.length){index=0}
+        //         img.src=imgArr[index]
+        //     },600)
+        // }
+        
+        // let btn02=document.getElementById('btn02')
+        // btn02.onclick=()=>{
+        //     clearInterval(timer)
+        // }
+    </script>
+</body>
+</html>

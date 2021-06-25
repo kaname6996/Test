@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+    <style> 
+    body{margin: 0;font-family: 'Noto Serif TC', serif}
+    header{background-color: rgb(240, 207, 170);height: 6vh;
+    display: flex;justify-content: space-between;align-items: center;padding-left: 30px;padding-right: 30px;
+    font-size: 20px;margin-bottom: 20px;} 
+
+
+
+    article{min-height: 85vh;display: flex;}
+        article>.A1{flex:auto}
+        article>.A2{flex:none;width:65vw;;display: flex;}
+        article>.A3{flex:auto}
+        .A21{flex:none;width:10%;text-align:right;padding-top: 30px;padding-right: 20px
+        ;}
+        .A21>div{line-height: 40px;}
+        
+        .A22{flex:none;width:90%;;display: flex;flex-wrap: wrap;padding-top: 30px
+        ;}
+        .A22>div{width: 30%;text-align: center}
+        .A221{font-size: 10px;
+        display: flex;justify-content: space-around;}
+        .A222{font-size: 30px;}
+
+
+
+    footer{background-color: rgb(151, 190, 184);height: 6vh;
+    justify-content: center;align-items: center;display: flex;}
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        my shop
+        <div >
+            商品
+            購物車
+        </div>
+    </header>
+    <article>
+        <div class="A1"></div>
+        <div class="A2">
+            <div class="A21">
+                <div>商品分類</div>
+                <div>所有商品</div>
+                <div>暢銷商品</div>
+                <div>本日精選</div>
+                <div>新品上市</div>
+            </div>
+            <div class="A22">
+                <div >
+                    <img src="https://i.imgur.com/ZMpETy0b.gif">
+                    <div class="A221">蛋糕 <button>加入購物車</button></div>
+                    <div class="A222">NT$150</div>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/ODZ7Zpzb.jpg">
+                    <div class="A221">滿滿的點心 <button>加入購物車</button></div>
+                    <div class="A222">NT$300</div>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/qT3MWAbb.jpg">
+                    <div class="A221">紅色的 <button>加入購物車</button></div>
+                    <div class="A222">NT$666</div>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/2G16qPab.jpg">
+                    <div class="A221">蛋糕 <button>加入購物車</button></div>
+                    <div class="A222">NT$85</div>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/fziT4jzb.gif">
+                    <div class="A221">魔術方塊 <button>加入購物車</button></div>
+                    <div class="A222">NT$999</div>
+                </div>
+            </div>
+        </div>
+        <div class="A3"></div>
+
+    </article>
+    <footer>2021 myshop all rights reserved.</footer>
+</body>
+</html>
